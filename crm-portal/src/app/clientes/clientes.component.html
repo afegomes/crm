@@ -1,0 +1,16 @@
+<h3>Clientes</h3>
+<div>
+    <button mat-raised-button (click)="onNovoClicked()">Novo</button>
+</div>
+<div style="width: 500px;">
+    <mat-grid-list cols="2" rowHeight="50px">
+        <ng-container *ngFor="let c of clientes">
+            <mat-grid-tile>{{c.nome}}</mat-grid-tile>
+            <mat-grid-tile>
+                <a routerLink="/clientes/{{c.id}}">
+                    <mat-icon>chevron_right</mat-icon>
+                </a>
+            </mat-grid-tile>
+        </ng-container>
+    </mat-grid-list>
+</div>

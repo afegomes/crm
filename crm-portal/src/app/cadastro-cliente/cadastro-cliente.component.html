@@ -1,0 +1,109 @@
+<div>
+    <h2>Detalhes</h2>
+    <div>
+        <mat-form-field>
+            <mat-label>Nome</mat-label>
+            <input matInput [(ngModel)]="cliente.nome" required>
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field>
+            <mat-label>Data de nascimento</mat-label>
+            <input matInput [matDatepicker]="picker" [(ngModel)]="cliente.dataNascimento" required>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field>
+            <mat-label>Sexo</mat-label>
+            <select [(ngModel)]="cliente.sexo" matNativeControl required>
+                <option value="M">Masculino</option>
+                <option value="F">Feminino</option>
+            </select>
+        </mat-form-field>
+    </div>
+</div>
+
+<div>
+    <h2>Endereço</h2>
+    <div>
+        <mat-form-field>
+            <mat-label>CEP</mat-label>
+            <input matInput [(ngModel)]="cliente.cep" required>
+        </mat-form-field>
+        <button mat-icon-button (click)="onPesquisarClicked()">
+            <mat-icon>search</mat-icon>
+        </button>
+    </div>
+    <div>
+        <mat-form-field>
+            <mat-label>Logradouro</mat-label>
+            <input matInput [(ngModel)]="cliente.logradouro" required>
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field>
+            <mat-label>Número</mat-label>
+            <input matInput [(ngModel)]="cliente.numero" required>
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field>
+            <mat-label>Complemento</mat-label>
+            <input matInput [(ngModel)]="cliente.complemento">
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field>
+            <mat-label>Bairro</mat-label>
+            <input matInput [(ngModel)]="cliente.bairro" required>
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field>
+            <mat-label>Cidade</mat-label>
+            <input matInput [(ngModel)]="cliente.cidade" required>
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field>
+            <mat-label>Estado</mat-label>
+            <select [(ngModel)]="cliente.estado" matNativeControl required>
+                <option value="AC">Acre</option>
+                <option value="AL">Alagoas</option>
+                <option value="AP">Amapá</option>
+                <option value="AM">Amazonas</option>
+                <option value="BA">Bahia</option>
+                <option value="CE">Ceará</option>
+                <option value="DF">Distrito Federal</option>
+                <option value="ES">Espírito Santo</option>
+                <option value="GO">Goiás</option>
+                <option value="MA">Maranhão</option>
+                <option value="MT">Mato Grosso</option>
+                <option value="MS">Mato Grosso do Sul</option>
+                <option value="MG">Minas Gerais</option>
+                <option value="PA">Pará</option>
+                <option value="PB">Paraíba</option>
+                <option value="PR">Paraná</option>
+                <option value="PE">Pernambuco</option>
+                <option value="PI">Piauí</option>
+                <option value="RJ">Rio de Janeiro</option>
+                <option value="RN">Rio Grande do Norte</option>
+                <option value="RS">Rio Grande do Sul</option>
+                <option value="RO">Rondônia</option>
+                <option value="RR">Roraima</option>
+                <option value="SC">Santa Catarina</option>
+                <option value="SP">São Paulo</option>
+                <option value="SE">Sergipe</option>
+                <option value="TO">Tocantins</option>
+            </select>
+        </mat-form-field>
+    </div>
+</div>
+
+<div>
+    <button mat-raised-button (click)="onSalvarClicked()">Salvar</button>
+    <button mat-raised-button (click)="onCancelarClicked()">Cancelar</button>
+    <button mat-raised-button (click)="onRemoverClicked()">Remover</button>
+</div>
